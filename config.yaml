@@ -1,0 +1,52 @@
+mode: MVP  # MVP | RESEARCH
+
+dataset:
+  name: NASA_CM1
+  path: data/sample/NASA_CM1_sample.csv
+  target_column: defects
+
+training:
+  test_size: 0.30
+  random_state: 42
+  batch_size: 32
+  epochs: 40
+  learning_rate: 0.001
+  optimizer: sgd  # sgd | sgd_momentum | adam
+  momentum: 0.9
+  patience: 8
+  hidden_sizes: [64, 32]
+  dropout: 0.2
+
+smote:
+  enabled: true
+  k_neighbors: 5
+
+ga:
+  population_size: 16
+  generations: 12
+  crossover_probability: 0.80
+  mutation_probability: 0.05
+  random_state: 42
+  min_features: 4
+  max_features: null
+  fitness_metric: f1
+  lambda_penalty: 0.15
+
+fuzzy:
+  enabled: true
+  risk_bounds:
+    LOW: [0, 25]
+    MEDIUM: [25, 50]
+    HIGH: [50, 75]
+    CRITICAL: [75, 100]
+
+research:
+  ga:
+    population_size: 40
+    generations: 30
+  training:
+    epochs: 80
+
+ui:
+  operator_name: Dr. Alan Vance
+  operator_id: LAB-RE_01

@@ -1,0 +1,12 @@
+@keyframes nd-fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nd-card, .nd-kpi, .nd-header {
+  animation: nd-fade-up 280ms ease-out both;
+}
+
+.nd-kpi:nth-child(2) { animation-delay: 40ms; }
+.nd-kpi:nth-child(3) { animation-delay: 80ms; }
+.nd-kpi:nth-child(4) { animation-delay: 120ms; }
